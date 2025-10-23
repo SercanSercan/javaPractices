@@ -1,4 +1,4 @@
-import com.javabrains.challenges.C1_FizzBuzz;
+import jb_challenges.C1_FizzBuzz;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.

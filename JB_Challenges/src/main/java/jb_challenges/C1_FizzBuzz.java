@@ -1,4 +1,4 @@
-package com.javabrains.challenges;
+package jb_challenges;
 
 public class C1_FizzBuzz {
 
@@ -16,3 +16,4 @@ public class C1_FizzBuzz {
         }
     }
 }
+
