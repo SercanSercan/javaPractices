@@ -8,16 +8,11 @@ public class C3_ReverseString {
     }
 
     public static String reverseString(String text) {
-        String reversedText = "";
+        StringBuilder sb = new StringBuilder();
         for (int i = text.length() - 1; i > -1 ; i--) {
-            if (i == text.length()) {
-                reversedText = reversedText + text.substring(i);
-            } else {
-                reversedText = reversedText + text.substring(i, i + 1);
-            }
-
+            sb.append(text.charAt(i));
         }
 
-        return reversedText;
+        return sb.toString();
     }
 }
