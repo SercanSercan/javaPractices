@@ -1,5 +1,6 @@
 package jb_challenges;
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class C2_TwoSum {
 
@@ -14,7 +15,7 @@ public class C2_TwoSum {
         System.out.println("First Test");
         System.out.println(Arrays.toString(testArray));
 
-        res = findTwoSum(testArray, target);
+        res = findTwoSumWithMap(testArray, target);
         System.out.println(Arrays.toString(res));
         System.out.println("");
         //////////////////////////////////////////////////////////////////
@@ -25,11 +26,28 @@ public class C2_TwoSum {
         System.out.println("Second Test");
         System.out.println(Arrays.toString(testArray));
 
-        res = findTwoSum(testArray, target);
+        res = findTwoSumWithMap(testArray, target);
         System.out.println(Arrays.toString(res));
     }
 
-    public static int[] findTwoSum(int[] numbers, int target) {
+    public static int[] findTwoSumWithMap(int[] numbers, int target) {
+        HashMap<Integer, Integer> previousNumbers = new HashMap<>();
+
+        for (int i = 0; i < numbers.length; i++) {
+            int currentNumber = numbers[i];
+            int delta = target - currentNumber;
+            if (previousNumbers.containsKey(delta)) {
+                int index = previousNumbers.get(delta);
+                return new int[] { index, i};
+            } else {
+                previousNumbers.put(currentNumber, i);
+            }
+        }
+
+        return new int[] {};
+    }
+
+    public static int[] findTwoSumBruteForce(int[] numbers, int target) {
         int firstNum, secondNum, result;
         int i, j;
 
